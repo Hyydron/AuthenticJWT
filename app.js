@@ -160,7 +160,7 @@ const dbUser = process.env.DB_USER
 const dbPassword = process.env.DB_PASS
 
 mongoose
-.connect('mongodb+srv://syncrolplus:Syncrol_@syncrol.xne2p.mongodb.net/?retryWrites=true&w=majority&appName=Syncrol').then(() => {
+.connect(process.env.MONGODB_URI).then(() => {
     app.listen(3000)
     console.log("Sucesso ao conectar ao banco de dados")
 }).catch((err) => console.log(err))
